@@ -5,35 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
   <title>Frontend Mentor | Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<main>
+  <div id="intro-container">
+    <div id="intro-copy">
+      <h1>
+        Simple, traffic-based pricing
+      </h1>
+      <p class="regular-copy">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </div>
   </div>
+  <form id="pricing-form">
+    <p id="page-views-text">100K PAGEVIEWS</p>
+    <div id="slider-container">
+      <input  type="range" min="0" max="4" step="1" id="page-views-slider">
+      <div id="slider-track-filled">
+      </div>
+      <div id="slider-visible-thumb">
+
+      </div>
+
+    </div>
+    <div id="pricing-container">
+      <p id="price">
+        $16.00
+      </p>
+      <p id="pricing-term">
+        / month
+      </p>
+    </div>
+    <div>
+      <p class="regular-copy">
+        Monthly Billing
+      </p>
+
+      <div id="switch-background">
+          <input type="checkbox">
+          <div id="switch"></div> 
+      </div>
+      
+      <p class="regular-copy">
+        Yearly Billing
+      </p>
+      <p class="percentage">
+        -25%
+      </p>
+    </div>
+    <div id="main-content-card-bottom">
+      <div id="value-propositions-container">
+        <div id="value-porposition-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" class="checkmarks">
+            <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+          </svg>
+          <p class="value-propositions">
+            Unlimited websites
+          </p>
+        </div>
+        <div id="value-porposition-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" class="checkmarks">
+            <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+          </svg>
+          <p class="value-propositions">
+            100% data ownership
+          </p>
+        </div>
+        <div id="value-porposition-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" class="checkmarks">
+            <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/>
+          </svg>
+          <p class="value-propositions">
+            Email reports
+          </p>
+        </div>
+      </div>
+      <button type="button" id="start-my-trial-button">
+        Start my trial
+      </button>
+    </div>
+  </form>
+
+</main> 
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
