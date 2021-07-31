@@ -27,15 +27,18 @@
   </div>
   <form id="pricing-form">
     <p id="page-views-text">100K PAGEVIEWS</p>
-    <div id="slider-container">
-      <input  type="range" min="0" max="4" step="1" id="page-views-slider">
-      <div id="slider-track-filled">
+    <div id="slider-padding-wrapper">
+      <div id="slider-container">
+        <input  type="range" min="0" max="4" step="1" id="page-views-slider">
+        <div id="slider-visible-track">
+        </div>
+        <div id="slider-track-filled">
+        </div>
+        <div id="slider-visible-thumb">
+        </div>
       </div>
-      <div id="slider-visible-thumb">
-
-      </div>
-
     </div>
+   
     <div id="pricing-container">
       <p id="price">
         $16.00
@@ -44,15 +47,14 @@
         / month
       </p>
     </div>
-    <div>
+    <div id="billing-interval-container">
       <p class="regular-copy">
         Monthly Billing
       </p>
-
-      <div id="switch-background">
-          <input type="checkbox">
-          <div id="switch"></div> 
-      </div>
+      <span id="switch-container">
+          <input id="switch-toggle"type="checkbox">
+          <div id="switch-background"></div> 
+      </span>
       
       <p class="regular-copy">
         Yearly Billing
