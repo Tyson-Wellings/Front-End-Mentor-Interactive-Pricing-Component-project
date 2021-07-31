@@ -63,12 +63,13 @@ main{
     background-color: white;
     box-sizing: border-box;
     border-radius: 8px;
-    padding: 20px;
     width: 100%;
     
 }
 
 #page-views-text{
+    padding-top: 30px;
+    margin: 0;
     font-weight: 800;
     font-size: 12px;
     color: var(--regular-copy);
@@ -78,13 +79,43 @@ main{
 /* slider inspiration comes from this video
  https://www.youtube.com/watch?v=Ow0QjqmaRtQ */
 
+#slider-padding-wrapper{
+    padding: 0 20px;
+}
+
  #slider-container{
     height: 30px;
     position: relative;
-    margin: 40px 0 20px 0;
+    margin: 30px 0 30px 0;
 }
 
  #page-views-slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0;
+    outline: none;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+    
+ }
+
+#page-views-slider::-webkit-slider-thumb{
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 16px;
+ }
+
+ #slider-visible-track{
     -webkit-appearance: none;
     appearance: none;
     background-color: var(--Light-Grayish-Blue-Empty-Slider-Bar);
@@ -98,30 +129,17 @@ main{
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 2;
-    
- }
-
-#page-views-slider::-webkit-slider-thumb{
-    -webkit-appearance: none; 
-    appearance: none;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    position: relative;
-    background: url('images/icon-slider.svg') no-repeat center;
-    background-color: var(--Strong-Cyan);
-    border-radius: 20px;
-    -webkit-box-shadow: 2px 15px 25px -3px #12F1DB; 
-    box-shadow: 2px 15px 25px -3px #12F1DB;
  }
 
 #slider-visible-thumb{
     width: 32px;
     height: 32px;
     cursor: pointer;
-    z-index: 9;
+    z-index: 3;
     position: absolute;
-    margin-top: 30px;
+    left: calc(50% - 16px);
+    top: 50%;
+    transform: translatey(-50%);
     background: url('images/icon-slider.svg') no-repeat center;
     background-color: var(--Strong-Cyan);
     border-radius: 20px;
@@ -135,9 +153,10 @@ main{
 #slider-track-filled{
     position: absolute;
     width: 50%;
-    right: 0; 
+    left: 0; 
     background-color: var(--Soft-Cyan);
     height: 8px;
+    border-radius: 4px 0px 0px 4px;
     z-index: 3;
     top: 50%; 
     transform: translateY(-50%);
@@ -165,9 +184,102 @@ main{
 
  }
 
- #switch-background{
-    background-color: 
- }
+
+#billing-interval-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 30px 0;
+
+}
+
+#billing-interval-container .regular-copy, #switch-container, .percentage{
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 6px 0 0;
+} 
+
+#switch-container{
+    width: 40px;
+    display: inline-block;
+    height: 20px;
+    position: relative; 
+}
+
+#switch-background{
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 20px; 
+    border-radius: 10px;
+    background-color: var(--Light-Grayish-Blue);
+    transition: background-color 800ms;
+}
+
+#switch-toggle{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; 
+    height: 15px;
+    position: absolute;
+    z-index: 5;
+    background-color: white;
+    border-radius: 7.5px;
+    margin: 0;
+    top: 50%; 
+    left: 2.5px;
+    transform: translateY(-50%);
+    transition: left 400ms;
+}
+
+#switch-toggle:checked{
+    left: 22.5px;
+}
+
+#switch-toggle:checked ~ #switch-background{
+    background-color: var(--Strong-Cyan) ;
+}
+
+.percentage{
+    background-color: var(--Light-Grayish-Red);
+    color: var(--Light-Red);
+    font-weight: 700;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 10.8px;
+}
+
+#main-content-card-bottom{
+    border-top: 1px solid var(--Light-Grayish-Blue-Empty-Slider-Bar);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.value-propositions{
+    display: inline-block;
+    color: var(--regular-copy);
+    margin: 0 0 10px 10px;
+}
+
+#start-my-trial-button{
+    box-sizing: default;
+    padding: 15px 50px;
+    border: none; 
+    border-radius: 25px;
+    color: var(--Pale-Blue);
+    background-color: var(--Dark-Desaturated-Blue);
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
 
 
 
