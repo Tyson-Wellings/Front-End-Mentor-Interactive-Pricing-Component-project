@@ -63,7 +63,10 @@ main{
     background-color: white;
     box-sizing: border-box;
     border-radius: 8px;
-    width: 100%;
+    width: 335px;
+    margin: 0 auto 100px auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     
 }
 
@@ -250,6 +253,10 @@ main{
     font-size: 10px;
     padding: 4px 8px;
     border-radius: 10.8px;
+    width: 30px;
+    height: 12px;
+    line-height: 15px;
+    overflow: hidden;
 }
 
 #main-content-card-bottom{
@@ -277,7 +284,125 @@ main{
     background-color: var(--Dark-Desaturated-Blue);
     font-weight: 700;
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+@media only screen and (min-width: 1000px){
+    #pricing-form{
+        width: 670px;
+        margin: 0 auto;
+    }
+
+    #slider-padding-wrapper{
+        padding: 0 40px;
+    }
+
+    main{
+        background-size: 100%;
+        height: 100%;
+        padding: 40px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    #intro-container{
+        margin: 0 0 40px 0;
+    }
+
+    #intro-container .regular-copy{
+        width: 100%;
+       
+    }
+
+    #page-views-text{
+        grid-area: page-views;
+        padding: 0;
+        justify-self: left;
+    }
+
+    #slider-padding-wrapper{
+        grid-area: slider;
+        padding: 0;
+    }
+
+    #pricing-container{
+        grid-area: price;
+        display: flex;
+        align-items: center;
+        justify-self: end;
+    }
+
+    #billing-interval-container{
+        grid-area: billing;
+        justify-self: center;
+        justify-self: end;
+    }
+
+    #main-content-card-bottom{
+        grid-area: bottom-content;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 0 0 0;
+    }
+
+    #start-my-trial-button{
+        margin: 0;
+    }
+
+    #value-propositions-container{
+        text-align: left;
+    }
+
+
+    #pricing-form{
+        padding: 30px 50px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "page-views price"
+        "slider slider"
+        "billing billing"
+        "bottom-content bottom-content";
+        align-items: center;
+        box-sizing: border-box;
+        width: 600px;
+
+        
+    }
+
+    #price{
+        font-size: 45px;
+    }
+
+    #billing-interval-container .regular-copy, #switch-container, .percentage {
+        font-size: 15px;
+        margin: 0 15px 0 0;
+    }
+
+    .percentage{
+        font-size: 12px;
+        width: 96px;
+        line-height: auto;
+    }
+    #page-views-slider::-webkit-slider-thumb{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    #slider-visible-thumb{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-size: 20px;
+    }
 }
 
 
