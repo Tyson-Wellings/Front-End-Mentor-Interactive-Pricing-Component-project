@@ -108,6 +108,10 @@ main{
     
  }
 
+ #page-views-slider::-moz-slider-thumb {
+    -moz-appearance: none;
+}
+
 #page-views-slider::-webkit-slider-thumb{
     -webkit-appearance: none; 
     appearance: none;
