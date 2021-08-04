@@ -1,4 +1,5 @@
 var slider = document.getElementById("page-views-slider");
+var sliderContainer = document.getElementById("slider-container")
 var sliderThumb = document.getElementById("slider-visible-thumb");
 var sliderThumbWidth = sliderThumb.offsetWidth
 var filledTrack = document.getElementById("slider-track-filled");
@@ -14,21 +15,13 @@ for (i = 0; i <= parseInt(slider.max); i++){
 function init (){
     prepareSlider()
     prepareDiscountSwitch()
+    prepareThumb()
 }
 /* had to write in the positions for the visible thumbs using a for loop 
 that iterated through a function that way the visible thumb would be
 overlapping the input's orginal thumb irrespective of screen-size. If the overlap wasn't exact there 
 would be portions of the thumb that would not be clickable which could 
 hinder the user experience imo */
-function prepareSlider(){
-    slider.oninput = function(){
-    sliderThumb.style.left = xPos[this.value]
-    filledTrack.style.width = this.value*25 + "%"
-    calculateRate()
-    changePageViews()
-    }
-}
-
 
 function prepareXposCoordinates (index){
     var percentage, offset 
@@ -40,12 +33,40 @@ function prepareXposCoordinates (index){
  /*     the xPos is written using the calc() css syntax. */
 }
 
+function prepareSlider(){
+    slider.oninput = function(){
+    sliderThumb.style.left = xPos[this.value]
+    filledTrack.style.width = this.value*25 + "%"
+    
+    calculateRate()
+    changePageViews()
+    }
+}
+
+function prepareThumb(){
+    
+    
+    
+    sliderThumb.addEventListener("mousemove" ,function(e){
+        var mouseX = e.clientX
+        console.log(mouseX)
+
+    })
+
+
+
+
+}
+
+
+
+
 function calculateRate (){
     if (discountSwitch.checked == false){
         document.getElementById("price").innerText = "$" + monthlyRate[slider.value] + ".00"
         return
     }
-        document.getElementById("price").innerText = "$" + monthlyRate[slider.value]*9 + ".00"
+        document.getElementById("price").innerText = "$" + monthlyRate[slider.value]*9/12 + ".00"
     
 }
 
@@ -54,14 +75,7 @@ function changePageViews(){
 }
 
 function prepareDiscountSwitch(){
-    discountSwitch.addEventListener("input",function(){
-        if (discountSwitch.checked == true){
-            document.getElementById("pricing-term").innerText = "year"
-            calculateRate()
-            return
-        }
-
-        document.getElementById("pricing-term").innerText = "month"
+    discountSwitch.addEventListener("input",function(){       
         calculateRate()
     })
 }
