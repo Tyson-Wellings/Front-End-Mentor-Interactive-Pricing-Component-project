@@ -87,7 +87,7 @@ main{
 }
 
  #slider-container{
-    height: 30px;
+    height: 32px;
     position: relative;
     margin: 30px 0 30px 0;
 }
@@ -104,7 +104,7 @@ main{
     margin: 0;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: 4;
+    z-index: 5;
     
  }
 
@@ -119,8 +119,6 @@ main{
  }
 
  #slider-visible-track{
-    -webkit-appearance: none;
-    appearance: none;
     background-color: var(--Light-Grayish-Blue-Empty-Slider-Bar);
     width: 100%;
     height: 8px;
@@ -132,6 +130,7 @@ main{
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 2;
+    
  }
 
 #slider-visible-thumb{
@@ -148,8 +147,9 @@ main{
     border-radius: 20px;
     -webkit-box-shadow: 2px 15px 25px -3px #12F1DB; 
     box-shadow: 2px 15px 25px -3px #12F1DB;
+    transition: left 400ms ease-in-out;
+    z-index: 8;
 }
-
    
 
 
@@ -163,6 +163,7 @@ main{
     z-index: 3;
     top: 50%; 
     transform: translateY(-50%);
+    transition: width 400ms ease-in-out;
 }
 
 #pricing-container{
@@ -208,6 +209,10 @@ main{
     display: inline-block;
     height: 20px;
     position: relative; 
+}
+
+#switch-container:hover #switch-background{
+    background-color: var(--Soft-Cyan);
 }
 
 #switch-background{
