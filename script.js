@@ -11,11 +11,10 @@ var xPos = []
 for (i = 0; i <= parseInt(slider.max); i++){
     prepareXposCoordinates(i)
 }
-
+console.log(xPos)
 function init (){
     prepareSlider()
     prepareDiscountSwitch()
-    prepareThumb()
 }
 /* had to write in the positions for the visible thumbs using a for loop 
 that iterated through a function that way the visible thumb would be
@@ -42,38 +41,6 @@ function prepareSlider(){
     changePageViews()
     }
 }
-
-/* function prepareThumb(){
-    const windowWidth = window.innerWidth;
-    const sliderWidth = slider.offsetWidth;
-    const contBeginning = (windowWidth - sliderWidth)/2
-    const contEnd = windowWidth - contBeginning
-    const interval = sliderWidth/(slider.max)
-    
-    sliderContainer.addEventListener("mousemove" ,(e) => {
-        var mouseX = e.clientX
-        this.addEventListener("mousedown", () => {
-            xPos.forEach((coordinate, i) => {
-                
-                if (mouseX == contBeginning + (i*interval)){
-                    slider.value = i
-                    sliderThumb.style.left =xPos[i]
-                    console.log(true)
-                }
-
-            })
-            
-        })
-
-    })
-
-
-
-
-}
- */
-
-
 
 function calculateRate (){
     if (discountSwitch.checked == false){
