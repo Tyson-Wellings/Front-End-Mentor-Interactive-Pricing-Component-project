@@ -43,13 +43,27 @@ function prepareSlider(){
     }
 }
 
-function prepareThumb(){
+/* function prepareThumb(){
+    const windowWidth = window.innerWidth;
+    const sliderWidth = slider.offsetWidth;
+    const contBeginning = (windowWidth - sliderWidth)/2
+    const contEnd = windowWidth - contBeginning
+    const interval = sliderWidth/(slider.max)
     
-    
-    
-    sliderThumb.addEventListener("mousemove" ,function(e){
+    sliderContainer.addEventListener("mousemove" ,(e) => {
         var mouseX = e.clientX
-        console.log(mouseX)
+        this.addEventListener("mousedown", () => {
+            xPos.forEach((coordinate, i) => {
+                
+                if (mouseX == contBeginning + (i*interval)){
+                    slider.value = i
+                    sliderThumb.style.left =xPos[i]
+                    console.log(true)
+                }
+
+            })
+            
+        })
 
     })
 
@@ -57,7 +71,7 @@ function prepareThumb(){
 
 
 }
-
+ */
 
 
 
